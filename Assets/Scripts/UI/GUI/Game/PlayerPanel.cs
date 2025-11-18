@@ -17,6 +17,7 @@ public class PlayerPanel : BasePanel
     [Header("Info Texts")]
     [SerializeField] private TextMeshProUGUI teamInfoText;
     [SerializeField] private TextMeshProUGUI sideInfoText;
+    [SerializeField] private TextMeshProUGUI messageInfoText;
 
     public void TogglePanel(bool open)
     {
@@ -77,7 +78,7 @@ public class PlayerPanel : BasePanel
     public void StartGame()
     {
         SoundManager.Instance.soundController.RequestSound(SoundID.GameStart);
-        StartCoroutine(GameManager.Instance.StartGame());
+        StartCoroutine(GameManager.Instance.StartGame(messageInfoText));
     }
 
     public void GoToMenu()

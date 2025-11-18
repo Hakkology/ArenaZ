@@ -42,6 +42,8 @@ public class Arena : MonoBehaviour
     private readonly Queue<(IEntity victim, EType newType, EArenaSide newSide)> convertQueue = new();
     private bool isConverting = false;
     private bool winConditionTriggered = false;
+    private float _lastPlayTime = -999f;
+    private const float _cooldown = 0.4f;
 
 
     void Awake()
@@ -118,14 +120,18 @@ public class Arena : MonoBehaviour
             AllEntities.Add(newIe);
         }
 
-        SoundID soundId = newType switch
+        if (Time.time - _lastPlayTime >= _cooldown)
         {
-            EType.Rock => SoundID.RockConvert,
-            EType.Paper => SoundID.PaperConvert,
-            EType.Scissors => SoundID.ScissorConvert,
-            _ => SoundID.RockConvert 
-        };
-        SoundManager.Instance.soundController.RequestSound(soundId);
+            SoundID soundId = newType switch
+            {
+                EType.Rock => SoundID.RockConvert,
+                EType.Paper => SoundID.PaperConvert,
+                EType.Scissors => SoundID.ScissorConvert,
+                _ => SoundID.RockConvert 
+            };
+            SoundManager.Instance.soundController.RequestSound(soundId);
+            _lastPlayTime = Time.time;
+        }
 
         Destroy(victimEntity.gameObject);
 

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public enum PTeam
@@ -19,11 +20,12 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public IEnumerator StartGame()
+    public IEnumerator StartGame(TextMeshProUGUI infoText)
     {
         if (pTeamChoice == null || pTypeChoice == null)
         {
             Debug.Log("Choose team or side.");
+            infoText.text = "Choose team or side.";
             yield break;
         }
 
