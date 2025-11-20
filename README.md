@@ -53,7 +53,7 @@ Entities representing Rocks, Papers, and Scissors spawn on two opposing sides an
 ## Access
 
 Play the game online (WebGL) at:  
-https://webbysoftinit.com/games/arenaz
+https://cogtech.com.tr/games/arenaz
 
 ---
 
