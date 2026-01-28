@@ -53,7 +53,7 @@ Entities representing Rocks, Papers, and Scissors spawn on two opposing sides an
 ## Access
 
 Play the game online (WebGL) at:  
-https://cogtech.com.tr/games/arenaz
+https://fatalixsoft.com.tr/play/46
 
 ---
 
@@ -110,4 +110,4 @@ Taş, kağıt ve makas birimleri arenanın iki tarafında doğar ve klasik üst�
 ## Erişim
 
 WebGL üzerinden oyunu şu adresten oynayabilirsiniz:  
-https://webbysoftinit.com/games/arenaz
+https://fatalixsoft.com.tr/play/46
